@@ -1,0 +1,59 @@
+clc
+
+% --- Main window
+
+W = UI.Window(1);
+% W.set_theme('light');
+
+W.prop.padding = 0.01;
+
+% --- Layouts
+
+L = UI.Layout(3,2, ...
+  {'cA' 'cB' ; 'cC' 'cE' ; 'cF' 'cG'});
+
+L.row(1).height = 0.2;
+L.col(2).width = 0.4;
+
+W.layout = L;
+
+L2 = UI.Layout(2, 2, {'sA' 'sB' ; 'sC' 'sD'});
+W.insert(L2, 'cC');
+
+% --- Axes
+
+A = UI.Axes();
+W.insert(A, 'cG');
+
+% --- List widgets
+
+X = UI.List();
+for i = 1:10
+  X.addElement(['Hello ' num2str(i)]);
+end
+W.insert(X, 'cA');
+
+% --- Text
+
+T = UI.Text('Random text');
+% T.vertical = true;
+W.insert(T, 'sD');
+
+% --- Slider
+
+S = UI.Slider();
+W.insert(S, 'cF')
+
+% --- Display
+
+W.show
+
+% -------------
+
+% --- TO DO
+% UI.Text: Manage overflow ?
+% UI.Form: Edit with different box styling and static text
+% UI.Log: Styled rectangles with text in axes
+% UI.Button: Array of buttons in axes(Latch/Toggle)
+% UI.Image
+% UI.Colorbar
