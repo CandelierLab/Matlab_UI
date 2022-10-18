@@ -34,7 +34,7 @@ switch input
   otherwise
 
     % Emit event
-    notify(this, 'shortcut', UI.shortcut_data(shortcut=input));
+    notify(this, 'shortcut', UI.EVentData(value=input));
 
 end
 

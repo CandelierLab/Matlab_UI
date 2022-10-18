@@ -52,7 +52,7 @@ if this.text.display
   this.textval.String = num2str(this.value, this.text.format);
 end
 
-notify(this, 'set_value',  UI.slider_data(value=this.value));
+notify(this, 'set_value',  UI.EventData(value=this.value));
 
 % --- Play
 if ~this.continuous && this.play.status

@@ -74,9 +74,6 @@ W.show
 % -------------
 
 % --- TO DO
-% UI.Text: Manage overflow ?
-% UI.Form: Edit with different box styling and static text
-% UI.Log: Styled rectangles with text in axes
-% UI.Button: Array of buttons in axes(Latch/Toggle)
+% UI.Form: Edit/Buttons with different box styling and static text, units
 % UI.Image
 % UI.Colorbar
