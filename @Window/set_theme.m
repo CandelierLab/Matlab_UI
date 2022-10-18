@@ -40,6 +40,11 @@ switch tag
     this.theme.color.bar.background = grey(0.4);
     this.theme.color.bar.highlight = [0 80 120]/255;
 
+    this.theme.color.log.background = grey(0.05);
+    this.theme.color.log.title = [37 109 133]/255;
+    this.theme.color.log.section = [71 181 255]/255;
+    this.theme.color.log.date = [167 210 203]/255;
+
 end
 
 end
