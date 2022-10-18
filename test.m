@@ -41,7 +41,30 @@ W.insert(T, 'sD');
 
 % --- Slider
 
-S = UI.Slider();
+% S = UI.Slider();
+% W.insert(S, 'cF')
+
+% --- Log
+
+S = UI.Log();
+S.add('title', 'Log console');
+S.add('');
+S.add('---');
+S.add('section', 'Section 1');
+S.add('Standard text here');
+
+S.add('--date');
+
+for i = 1:10
+  S.add('Standard text too');
+end
+
+S.add('---');
+S.add('Standard text again');
+S.add('--date');
+
+S.add('Standard text final');
+
 W.insert(S, 'cF')
 
 % --- Display
