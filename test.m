@@ -46,26 +46,35 @@ W.insert(T, 'sD');
 
 % --- Log
 
-S = UI.Log();
-S.add('title', 'Log console');
-S.add('');
-S.add('---');
-S.add('section', 'Section 1');
-S.add('Standard text here');
+% S = UI.Log();
+% S.add('title', 'Log console');
+% S.add('');
+% S.add('---');
+% S.add('section', 'Section 1');
+% S.add('Standard text here');
 
-S.add('--date');
+% S.add('--date');
 
-for i = 1:10
-  S.add('Standard text too');
-end
+% for i = 1:10
+%   S.add('Standard text too');
+% end
 
-S.add('---');
-S.add('Standard text again');
-S.add('--date');
+% S.add('---');
+% S.add('Standard text again');
+% S.add('--date');
 
-S.add('Standard text final');
+% S.add('Standard text final');
 
-W.insert(S, 'cF')
+% W.insert(S, 'cF')
+
+% --- Form
+
+C = UI.Controls;
+
+C.add('edit', 'First edit box', default=18);
+C.add('edit', 'Second edit box', units='ms');
+
+W.insert(C, 'cF')
 
 % --- Display
 
@@ -75,5 +84,8 @@ W.show
 
 % --- TO DO
 % UI.Form: Edit/Buttons with different box styling and static text, units
+%   Edit: Notification de changement
+%   Edit: Suivi du scrolling
+%   Button: to do
 % UI.Image
 % UI.Colorbar
