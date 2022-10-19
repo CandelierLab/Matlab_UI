@@ -42,6 +42,16 @@ switch this.Elm(k).type
         % Notify click
         notify(this, 'clicked', UI.EventData(value=k));
 
+        if this.Elm(k).value
+          this.Elm(k).cell.bkg.FaceColor = this.window.theme.color.button.off;
+          pause(0.1);
+          this.Elm(k).cell.bkg.FaceColor = this.window.theme.color.button.on;
+        else
+          this.Elm(k).cell.bkg.FaceColor = this.window.theme.color.button.on;
+          pause(0.1);
+          this.Elm(k).cell.bkg.FaceColor = this.window.theme.color.button.off;
+        end
+
       case 3
 
         % Toggle value
