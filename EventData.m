@@ -1,7 +1,7 @@
 classdef (ConstructOnLoad) EventData < event.EventData
 
    properties
-      shortcut
+      value
    end
    
    methods

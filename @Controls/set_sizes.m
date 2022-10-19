@@ -7,7 +7,7 @@ this.axes.Units = 'normalized';
 ws = this.slider.width/this.pos(3);
 wd = this.colSize(1)*(1-ws);
 wc = this.colSize(2)*(1-ws);
-wu = this.colSize(3)*(1-ws);
+wu = (1-this.colSize(1)-this.colSize(2))*(1-ws);
 h = this.elm_height/this.pos(4);
 this.H = h*numel(this.Elm);
 

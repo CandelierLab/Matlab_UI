@@ -1,8 +1,21 @@
 classdef Controls < handle
-%{
+%{ 
 UI Controls class
-%
+
+Events:
+  - edited (edit)
+  - clicked (button)
+  - toggled (button)
+
 %}
+
+  % === EVENTS =============================================================
+
+  events
+    edited
+    clicked
+    toggled
+  end
 
   % === PROPERTIES =========================================================
 
@@ -16,7 +29,7 @@ UI Controls class
     axes
 
     % Columns
-    colSize = [0.5 0.4 0.1];
+    colSize = [0.5 0.4];
     slider = struct(width=15);
        
   end
@@ -28,6 +41,7 @@ UI Controls class
       type = {}, ...
       description = {}, ...
       default = {}, ...
+      value = {}, ...
       units = {}, ...
       callback = {});
 
@@ -55,15 +69,6 @@ UI Controls class
         % Listeners
         addlistener(this.window, 'resize', @this.set_sizes);
 
-      end
-
-      function set.colSize(this, value)
-
-        this.colSize = value;
-        if numel(this.value)==2
-          this.colSize(end+1) = 0;
-        end
-        
       end
 
   end

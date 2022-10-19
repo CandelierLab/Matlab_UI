@@ -70,8 +70,12 @@ W.insert(T, 'sD');
 % --- Form
 
 C = UI.Controls;
+C.colSize = [0.5 0.3];
 
 C.add('edit', 'First edit box', default=18);
+for i = 1:15
+  C.add('button', "button " + i, string='Try me');
+end
 C.add('edit', 'Second edit box', units='ms');
 
 W.insert(C, 'cF')
@@ -83,9 +87,5 @@ W.show
 % -------------
 
 % --- TO DO
-% UI.Form: Edit/Buttons with different box styling and static text, units
-%   Edit: Notification de changement
-%   Edit: Suivi du scrolling
-%   Button: to do
 % UI.Image
 % UI.Colorbar
