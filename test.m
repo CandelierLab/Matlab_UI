@@ -17,13 +17,13 @@ L.col(2).width = 0.4;
 
 W.layout = L;
 
-L2 = UI.Layout(2, 2, {'sA' 'sB' ; 'sC' 'sD'});
-W.insert(L2, 'cC');
+% L2 = UI.Layout(2, 2, {'sA' 'sB' ; 'sC' 'sD'});
+% W.insert(L2, 'cC');
 
 % --- Axes
 
 A = UI.Axes();
-W.insert(A, 'cG');
+W.insert(A, 'cC');
 
 % --- List widgets
 
@@ -37,7 +37,7 @@ W.insert(X, 'cA');
 
 T = UI.Text('Random text');
 % T.vertical = true;
-W.insert(T, 'sD');
+W.insert(T, 'cB');
 
 % --- Slider
 
@@ -69,16 +69,16 @@ W.insert(T, 'sD');
 
 % --- Form
 
-C = UI.Controls;
-C.colSize = [0.5 0.3];
+% C = UI.Controls;
+% C.colSize = [0.5 0.3];
 
-C.add('edit', 'First edit box', default=18);
-for i = 1:15
-  C.add('button', "button " + i, string='Try me');
-end
-C.add('edit', 'Second edit box', units='ms');
+% C.add('edit', 'First edit box', default=18);
+% for i = 1:15
+%   C.add('button', "button " + i, string='Try me');
+% end
+% C.add('edit', 'Second edit box', units='ms');
 
-W.insert(C, 'cF')
+% W.insert(C, 'cF')
 
 % --- Display
 
