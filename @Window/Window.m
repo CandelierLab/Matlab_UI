@@ -6,7 +6,7 @@ Window class
 % Objects of this class emit the following events:
 %   - 'resize' whenever the window is resized
 %   - 'shortcut' whenever a keyboard shortcut is activated
-%
+%   - 'scroll' scroll event
 %}
 
     % === EVENTS ===========================================================
@@ -14,6 +14,7 @@ Window class
     events
       resize
       shortcut
+      scroll
     end
 
     % === PROPERTIES =======================================================
@@ -24,10 +25,11 @@ Window class
       figure
       prop
       layout
+      mouseover
 
       % Widgets
-      widget   
-
+      widget
+      
       % Display
       theme
 

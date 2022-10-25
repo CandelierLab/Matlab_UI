@@ -34,8 +34,13 @@ this.figure.Color = this.theme.color.figure.background;
 this.figure.SizeChangedFcn = @(~,~) notify(this, 'resize');
 
 % Shortcuts
-this.figure.KeyPressFcn = @this.KeyPress;
+this.figure.KeyPressFcn = @this.key_press;
 
+% Mouse position
+this.figure.WindowButtonMotionFcn = @this.mouse_move;
+
+% Scroll wheel
+this.figure.WindowScrollWheelFcn = @this.scroll_wheel;
 
 % Mouse pointer management
 iptPointerManager(this.figure);

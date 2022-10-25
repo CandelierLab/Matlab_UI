@@ -34,7 +34,7 @@ Component:Selectable list class
     selected
 
     % Scrollbar
-    slider = struct(width=15);
+    slider = struct(width=15, value=0);
 
     % Dimension
     element = struct(height=16);

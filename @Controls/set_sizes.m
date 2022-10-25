@@ -13,8 +13,6 @@ this.H = h*numel(this.Elm);
 
 for i = 1:numel(this.Elm)
 
-  % this.Elm(i).cell.rect.Position = [0 (i-1)*h 1-ws h];
-
   % --- Description
 
   this.Elm(i).cell.desc.Position = [0 (i-1/2)*h];
@@ -39,10 +37,10 @@ if this.H>1
   iptSetPointerBehavior(this.slider.track, struct( ...
     enterFcn = @activateTrack, ...
     exitFcn = @inactivateTrack, ...
-    traverseFcn = @this.scroll));
+    traverseFcn = @this.move));
 
   this.slider.track.FaceColor = this.window.theme.color.bar.background; 
-  this.scroll([],[], value=0);
+  this.move([],[], value=this.slider.value);
 
 else
 

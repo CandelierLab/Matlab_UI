@@ -30,7 +30,7 @@ Events:
 
     % Columns
     colSize = [0.5 0.4];
-    slider = struct(width=15);
+    slider = struct(width=15, value=0);
        
   end
 

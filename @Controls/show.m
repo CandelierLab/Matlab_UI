@@ -21,6 +21,9 @@ this.axes.YLim = [0 1];
 this.axes.YDir = 'reverse';
 this.axes.ClippingStyle = 'rectangle';
 
+% Scroll listener
+addlistener(this.window, 'scroll', @this.scroll);
+
 % --- Insert elements
 
 for k = 1:numel(this.Elm)
