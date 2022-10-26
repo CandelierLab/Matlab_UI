@@ -1,9 +1,10 @@
-function insert(this, obj, name)
+function insert(this, obj, name, arg)
 
 arguments
   this
   obj
   name char
+  arg.rename logical = true
 end
 
 % --- Parenting
@@ -54,6 +55,11 @@ while true
 
       L{1}.cell(i).content = obj;
       obj.(position) = L{1}.cell(i).inner;
+
+      % Rename sublayout cells
+      if isa(obj, 'UI.Layout') && arg.rename
+        obj.names({}, prefix=L{1}.cell(i).name+" > ");
+      end
       
       return
 
