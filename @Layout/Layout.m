@@ -41,19 +41,13 @@ Layout class
     methods
 
         % --- Constructor -------------------------------------------------
-        function this = Layout(Nr, Nc, name)
+        function this = Layout(Nr, Nc,  arg)
 
           arguments
             Nr double = 1
             Nc double = 1
-            name cell = {}
+            arg.name cell = {}
           end
-
-          % --- Parent
-          % this.window = parent;
-          % if isempty(this.window.layout)
-          %   this.window.layout = this;
-          % end
 
           % Number of rows, cols
           this.Nr = Nr;
@@ -74,9 +68,7 @@ Layout class
           this.col = tmp;
 
           % Set names
-          if ~isempty(name)
-            this.name(name);
-          end
+          this.names(arg.name);
 
         end
 
