@@ -16,7 +16,7 @@ UI Log class
     axes
 
     % Scrollbar
-    slider = struct(width=15);
+    slider = struct(width=15, value=1);
        
   end
 

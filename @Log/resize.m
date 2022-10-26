@@ -27,10 +27,10 @@ if this.H>1
   iptSetPointerBehavior(this.slider.track, struct( ...
     enterFcn = @activateTrack, ...
     exitFcn = @inactivateTrack, ...
-    traverseFcn = @this.scroll));
+    traverseFcn = @this.move));
 
   this.slider.track.FaceColor = this.window.theme.color.bar.background; 
-  this.scroll([],[], value=1);
+  this.move([],[], value=1);
 
 else
 

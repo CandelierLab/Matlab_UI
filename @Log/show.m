@@ -13,13 +13,17 @@ this.axes = axes(this.window.figure, ...
 
 % Remove the axes toolbar
 this.axes.Toolbar.Visible = 'off';
-
 disableDefaultInteractivity(this.axes);
+
+% Misc axis settings
 this.axes.Visible = 'off';
 this.axes.XLim = [0 1];
 this.axes.YLim = [0 1];
 this.axes.YDir = 'reverse';
 this.axes.ClippingStyle = 'rectangle';
+
+% Scroll listener
+addlistener(this.window, 'scroll', @this.scroll);
 
 % --- Insert elements
 

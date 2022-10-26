@@ -1,14 +1,8 @@
-function scroll(this, ~, p, arg)
+function scroll(this, ~, evt)
 
-arguments
-  this
-  ~
-  p
-  arg.value double = NaN
+% --- Check mouseover
+if isempty(this.window.mouseover) || this~=this.window.widget(this.window.mouseover).object
+  return
 end
 
-if isnan(arg.value)
-  arg.value = 1-(p(2)-this.pos(2))/this.pos(4);
-end
-
-this.axes.YLim = max(0, min(1, arg.value))*(this.H-1) + [0 1];
+this.move([],[], value=this.slider.value+3*evt.value/numel(this.Elm));
