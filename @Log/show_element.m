@@ -52,5 +52,5 @@ this.Elm(k).cell.text = text(this.axes, 0, 0, ...
 
 % Reset dynamic properties
 if arg.update
-  this.set_sizes;
+  this.resize;
 end

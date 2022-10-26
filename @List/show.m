@@ -73,4 +73,4 @@ this.slider.track = rectangle(this.axes, ...
   EdgeColor = 'none');
 
 % Set dynamic properties
-this.set_sizes;
+this.resize;

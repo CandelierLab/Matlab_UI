@@ -77,5 +77,5 @@ end
 
 % Set dynamic properties
 this.toggle_mode(this.continuous);
-this.set_sizes;
+this.resize;
 this.scroll([],[],value=this.value);

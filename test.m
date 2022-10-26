@@ -46,28 +46,28 @@ W.insert(T, 'cB');
 
 % --- Log
 
-% S = UI.Log();
-% S.add('title', 'Log console');
-% S.add('');
-% S.add('---');
-% S.add('section', 'Section 1');
-% S.add('Standard text here');
+S = UI.Log();
+S.add('title', 'Log console');
+S.add('');
+S.add('---');
+S.add('section', 'Section 1');
+S.add('Standard text here');
 
-% S.add('--date');
+S.add('--date');
 
-% for i = 1:10
-%   S.add('Standard text too');
-% end
+for i = 1:10
+  S.add('Standard text too');
+end
 
-% S.add('---');
-% S.add('Standard text again');
-% S.add('--date');
+S.add('---');
+S.add('Standard text again');
+S.add('--date');
 
-% S.add('Standard text final');
+S.add('Standard text final');
 
-% W.insert(S, 'cF')
+W.insert(S, 'cF')
 
-% --- Form
+% --- Controls
 
 % C = UI.Controls;
 % C.colSize = [0.5 0.3];
@@ -80,7 +80,7 @@ W.insert(T, 'cB');
 
 % W.insert(C, 'cF')
 
-% --- Display
+% % --- Display
 
 W.show
 

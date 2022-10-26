@@ -1,35 +1,25 @@
-function set_sizes(this, ~, ~)
+function resize(this, ~, ~)
 
 this.axes.Units = 'pixel';
 this.pos = this.axes.Position;
 this.axes.Units = 'normalized';
 
-ws = this.slider.width/this.pos(3);
-wd = this.colSize(1)*(1-ws);
-wc = this.colSize(2)*(1-ws);
-wu = (1-this.colSize(1)-this.colSize(2))*(1-ws);
+w = this.slider.width/this.pos(3);
 h = this.elm_height/this.pos(4);
 this.H = h*numel(this.Elm);
 
 for i = 1:numel(this.Elm)
-
-  % --- Description
-
-  this.Elm(i).cell.desc.Position = [0 (i-1/2)*h];
-
-  % --- Control
-
-  this.Elm(i).cell.bkg.Position = [wd (i-1)*h wc h];
-  this.Elm(i).cell.control.Position = [wd+wc/2 (i-1/2)*h];
-
-  % --- Units
-
-  this.Elm(i).cell.units.Position = [wd+wc (i-1/2)*h];
-
+  this.Elm(i).cell.rect.Position = [0 (i-1)*h 1-w h];
+  switch this.Elm(i).cell.text.HorizontalAlignment
+    case 'left'
+      this.Elm(i).cell.text.Position = [0 (i-1/2)*h];
+    case 'right'
+      this.Elm(i).cell.text.Position = [1-w (i-1/2)*h];
+  end
 end
 
 % Track
-this.slider.track.Position = [1-ws 0 ws this.H];
+this.slider.track.Position = [1-w 0 w this.H];
 
 % Activate scrolling if necessary
 if this.H>1
@@ -37,10 +27,10 @@ if this.H>1
   iptSetPointerBehavior(this.slider.track, struct( ...
     enterFcn = @activateTrack, ...
     exitFcn = @inactivateTrack, ...
-    traverseFcn = @this.move));
+    traverseFcn = @this.scroll));
 
   this.slider.track.FaceColor = this.window.theme.color.bar.background; 
-  this.move([],[], value=this.slider.value);
+  this.scroll([],[], value=1);
 
 else
 

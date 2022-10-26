@@ -1,4 +1,4 @@
-function set_sizes(this, ~, ~)
+function resize(this, ~, ~)
 % This function is triggered upon figure creation and each time 
 % the window is resized.
 

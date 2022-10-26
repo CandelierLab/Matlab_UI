@@ -75,7 +75,7 @@ Component:Slider class
         this.window = value;
         
         % Listeners
-        addlistener(this.window, 'resize', @this.set_sizes);
+        addlistener(this.window, 'resize', @this.resize);
 
       end
 

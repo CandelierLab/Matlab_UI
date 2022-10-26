@@ -11,6 +11,6 @@ if this.stop <= this.range(1) || this.stop >= this.range(2)
 end
 
 if ~isempty(this.window)
-  this.set_sizes;
+  this.resize;
   this.scroll([],[],value=this.value);
 end
