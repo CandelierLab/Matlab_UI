@@ -10,6 +10,7 @@ end
 % --- Parenting
 
 this.add_widget(obj, name);
+
 if isprop(obj, 'window')
   obj.window = this;
   position = 'position';
@@ -56,7 +57,7 @@ while true
       L{1}.cell(i).content = obj;
       obj.(position) = L{1}.cell(i).inner;
 
-      % Rename sublayout cells
+      % Rename sub-layout cells
       if isa(obj, 'UI.Layout') && arg.rename
         obj.names({}, prefix=L{1}.cell(i).name+" > ");
       end

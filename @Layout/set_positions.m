@@ -28,8 +28,6 @@ H = H*this.position(4);
 
 for i = 1:this.Nr
 
-  
-
   switch this.orientation
 
     case 'xy'

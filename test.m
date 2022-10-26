@@ -2,22 +2,16 @@ clc
 
 % --- Main window
 
-W = UI.Window(1);
-% W.set_theme('light');
+W = UI.Window(3,2, fid=1);
 
-W.prop.padding = 0.01;
+W.layout.col(2).width = 0.3;
+W.layout.cell(1,2).name = 'spare';
 
-% --- Layouts
+L = UI.Layout(2, 1);
+W.insert(L, '2,1');
 
-L = UI.Layout(3,2);
-
-L.row(1).height = 0.2;
-L.col(2).width = 0.4;
-
-W.layout = L;
-
-L2 = UI.Layout(2, 2);
-W.insert(L2, '2,1');
+W.layout.padding = W.prop.padding;
+W.layout.margin = W.prop.padding;
 
 % % --- Axes
 

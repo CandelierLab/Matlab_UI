@@ -41,7 +41,7 @@ Layout class
     methods
 
         % --- Constructor -------------------------------------------------
-        function this = Layout(Nr, Nc,  arg)
+        function this = Layout(Nr, Nc, arg)
 
           arguments
             Nr double = 1
@@ -74,30 +74,30 @@ Layout class
 
         % === Property setters =============================================
 
-        function set.row(this, value) 
-          this.row = value;
-          this.set_positions;
-        end
+        % function set.row(this, value) 
+        %   this.row = value;
+        %   this.set_positions;
+        % end
 
-        function set.col(this, value) 
-          this.col = value;
-          this.set_positions;
-        end
+        % function set.col(this, value) 
+        %   this.col = value;
+        %   this.set_positions;
+        % end
 
-        function set.padding(this, value) 
-          this.padding = value;
-          this.set_positions;
-        end
+        % function set.padding(this, value) 
+        %   this.padding = value;
+        %   this.set_positions;
+        % end
 
-        function set.margin(this, value) 
-          this.margin = value;
-          this.set_positions;
-        end
+        % function set.margin(this, value) 
+        %   this.margin = value;
+        %   this.set_positions;
+        % end
 
-        function set.position(this, value) 
-          this.position = value;
-          this.set_positions;
-        end
+        % function set.position(this, value) 
+        %   this.position = value;
+        %   this.set_positions;
+        % end
     end
     
 end

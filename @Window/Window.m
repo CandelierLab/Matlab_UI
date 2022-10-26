@@ -1,12 +1,23 @@
-classdef Window < handle
+classdef Window < UI.Template
 %{
 Window class
-%
-% --- Events
-% Objects of this class emit the following events:
-%   - 'resize' whenever the window is resized
-%   - 'shortcut' whenever a keyboard shortcut is activated
-%   - 'scroll' scroll event
+
+--- Events
+Objects of this class emit the following events:
+  - 'resize' whenever the window is resized
+  - 'shortcut' whenever a keyboard shortcut is activated
+  - 'scroll' scroll event
+
+--- Usage
+
+W = UI.Window(1);
+
+% Set theme ('light', 'dark' [default])
+W.set_theme('light');
+
+% Remove padding (default is 0.01)
+W.prop.padding = NaN;
+
 %}
 
     % === EVENTS ===========================================================
@@ -24,11 +35,7 @@ Window class
       % Figure
       figure
       prop
-      layout
       mouseover
-
-      % Widgets
-      widget
       
       % Display
       theme
@@ -47,18 +54,30 @@ Window class
     methods
 
         % --- Constructor -------------------------------------------------
-        function this = Window(figId)
+        function this = Window(Nr, Nc, arg)
 
           arguments
-            figId = NaN
+            Nr double = 1
+            Nc double = 1
+            arg.name cell = {}
+            arg.fid double = NaN
+            arg.padding double = 0.01
           end
 
-          this.prop.id = figId;  
+          % Call UI.Template constructor
+          this = this@UI.Template(Nr, Nc, name=arg.name);
 
           % Default figure properties
+          this.prop.id = arg.fid; 
           this.prop.title = 'UI Window';
           this.prop.fullscreen = false;
-          this.prop.padding = NaN;
+          this.prop.padding = arg.padding;
+
+          % Layout padding
+          if ~isnan(this.prop.padding)
+            % this.layout.padding = this.prop.padding;
+            % this.layout.margin = this.prop.padding;
+          end
 
           % Default theme
           this.set_theme;            
@@ -70,19 +89,6 @@ Window class
 
         end
 
-        % --- Setters ------------------------------------------------------
-
-        function set.layout(this, L)
-          this.layout = L;
-          this.layout.window = this;
-          if ~isnan(this.prop.padding)
-            this.layout.padding = this.prop.padding;
-            this.layout.margin = this.prop.padding;
-          end
-        end
-
     end
     
-
-
 end

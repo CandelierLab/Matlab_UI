@@ -45,6 +45,9 @@ this.figure.WindowScrollWheelFcn = @this.scroll_wheel;
 % Mouse pointer management
 iptPointerManager(this.figure);
 
+% Compute inner and outer positions
+this.layout.set_positions;
+
 % Show all non-layout widgets
 for i = 1:numel(this.widget)
   if ~isa(this.widget(i).object, 'UI.Layout')

@@ -1,16 +1,29 @@
-function show(this, mode)
+function show(this, mode, root)
 
 arguments
   this
   mode char = 'inner'     % 'inner', 'outer'
+  root logical = true
 end
+
+% --- Window title
+
+if root
+  if isempty(this.cell(1).frame)
+    this.window.figure.NumberTitle = 'on';
+  else
+    this.window.figure.NumberTitle = 'off';
+  end
+end
+
+% --- Layout cells contours
 
 for i = 1:numel(this.cell)
 
   % Inner layout
   if isa(this.cell(i).content, class(this))
 
-    this.cell(i).content.show(mode);
+    this.cell(i).content.show(mode, false);
 
   else
 
