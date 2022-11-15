@@ -76,9 +76,10 @@ W.prop.padding = NaN;
 
           % Layout padding
           if ~isnan(this.prop.padding)
-            % this.layout.padding = this.prop.padding;
-            % this.layout.margin = this.prop.padding;
+            this.layout.padding = this.prop.padding;
+            this.layout.margin = this.prop.padding;
           end
+          
 
           % Default theme
           this.set_theme;            
@@ -87,9 +88,9 @@ W.prop.padding = NaN;
           this.fontsize = struct(normal = UI.font_size('normal'), large = UI.font_size('large'));
 
           % Default shortcuts
-          this.declare_shortcut('escape', 'Close the GUI');
-          this.declare_shortcut('control+h', 'Print the GUI help (including list of shortcuts)');
-          this.declare_shortcut('alt+l', 'Toggle the layout display');
+          this.declare_shortcut('escape', 'Close GUI');
+          this.declare_shortcut('control+h', 'Print GUI help (including list of shortcuts)');
+          this.declare_shortcut('alt+l', 'Toggle layout display');
 
         end
 
