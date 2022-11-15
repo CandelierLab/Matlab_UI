@@ -10,7 +10,7 @@ end
 
 prop = struct();
 prop.color = this.window.theme.color.figure.text;
-prop.size = 10;
+prop.size = this.window.fontsize.normal;
 prop.weight = 'normal';
 prop.angle = 'normal';
 prop.alignment = 'left';
@@ -19,7 +19,7 @@ switch this.Elm(k).type
 
   case 'title'
     prop.color = this.window.theme.color.log.title;
-    prop.size = 12;
+    prop.size = prop.size+2;
     prop.weight = 'bold';
 
   case 'section'

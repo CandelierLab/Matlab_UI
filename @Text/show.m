@@ -14,6 +14,7 @@ else
 end
 
 this.box.String = this.text;
+this.box.FontSize = this.window.fontsize.normal;
 this.box.FitBoxToText = false;
 this.box.Color = this.window.theme.color.figure.text;
 this.box.EdgeColor = 'none';

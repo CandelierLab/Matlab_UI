@@ -28,50 +28,50 @@ W.insert(X, '1,1');
 
 % % --- Text
 
-% T = UI.Text('Random text');
-% % T.vertical = true;
-% W.insert(T, 'cB');
+T = UI.Text('Random text');
+% T.vertical = true;
+W.insert(T, '2,1 > 1,1');
 
 % % --- Slider
 
-% % S = UI.Slider();
-% % W.insert(S, 'cF')
+S = UI.Slider();
+W.insert(S, '2,1 > 2,1')
 
 % % --- Log
 
-% S = UI.Log();
-% S.add('title', 'Log console');
-% S.add('');
-% S.add('---');
-% S.add('section', 'Section 1');
-% S.add('Standard text here');
+S = UI.Log();
+S.add('title', 'Log console');
+S.add('');
+S.add('---');
+S.add('section', 'Section 1');
+S.add('Standard text here');
 
-% S.add('--date');
+S.add('--date');
 
-% for i = 1:10
-%   S.add('Standard text too');
-% end
+for i = 1:10
+  S.add('Standard text too');
+end
 
-% S.add('---');
-% S.add('Standard text again');
-% S.add('--date');
+S.add('---');
+S.add('Standard text again');
+S.add('--date');
 
-% S.add('Standard text final');
+S.add('Standard text final');
 
-% W.insert(S, 'cF')
+W.insert(S, '3,1')
 
 % % --- Controls
 
-% % C = UI.Controls;
-% % C.colSize = [0.5 0.3];
+C = UI.Controls;
+C.colSize = [0.5 0.3];
 
-% % C.add('edit', 'First edit box', default=18);
-% % for i = 1:15
-% %   C.add('button', "button " + i, string='Try me');
-% % end
-% % C.add('edit', 'Second edit box', units='ms');
+C.add('edit', 'First edit box', default=18);
+for i = 1:15
+  C.add('button', "button " + i, string='Try me');
+end
+C.add('edit', 'Second edit box', units='ms');
 
-% % W.insert(C, 'cF')
+W.insert(C, '2,2')
 
 % --- Display
 

@@ -10,7 +10,7 @@ n = screen(3)/1000;
 switch desc
 
   case 'normal'
-    out = round(10 + n);
+    out = round(11 + n);
 
   case 'large'
     out = round(10 + 2*n);

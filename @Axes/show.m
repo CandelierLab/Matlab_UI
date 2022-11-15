@@ -18,7 +18,7 @@ this.axes.YAxis.Color = this.window.theme.color.axis;
 this.axes.ZAxis.Color = this.window.theme.color.axis;
 
 % Font
-this.axes.FontSize = UI.font_size();
+this.axes.FontSize = this.window.fontsize.normal;
 
 % Misc
 this.axes.Box = true;

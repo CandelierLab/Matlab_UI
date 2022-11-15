@@ -1,7 +1,7 @@
 function scroll(this, ~, evt)
 
 % --- Check mouseover
-if isempty(this.window.mouseover) || this~=this.window.widget(this.window.mouseover).object
+if isempty(this.window.mouseover) || this~=this.window.widget(this.window.mouseover).object || this.H<=1
   return
 end
 

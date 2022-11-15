@@ -10,7 +10,7 @@ end
 % --- Display settings
 
 if isempty(arg.font_size)
-  arg.font_size = UI.font_size('large');
+  arg.font_size = this.window.fontsize.large;
 end
 
 % --- Window title

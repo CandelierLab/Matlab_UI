@@ -39,6 +39,7 @@ W.prop.padding = NaN;
       
       % Display
       theme
+      fontsize
 
     end
 
@@ -81,6 +82,9 @@ W.prop.padding = NaN;
 
           % Default theme
           this.set_theme;            
+
+          % Default font sizes
+          this.fontsize = struct(normal = UI.font_size('normal'), large = UI.font_size('large'));
 
           % Default shortcuts
           this.declare_shortcut('escape', 'Close the GUI');

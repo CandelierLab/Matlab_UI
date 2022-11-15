@@ -121,6 +121,6 @@ switch this.orientation
 
 end
 
-notify(this, 'set_limits',  UI.slider_data(value=[this.start this.stop]));
+notify(this, 'set_limits',  UI.EventData(value=[this.start this.stop]));
 
 end
