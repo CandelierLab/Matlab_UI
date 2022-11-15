@@ -1,4 +1,4 @@
-function addElement(this, str, val)
+function add_element(this, str, val)
 
 arguments
   this

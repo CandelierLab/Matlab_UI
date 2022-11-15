@@ -15,16 +15,16 @@ W.layout.margin = W.prop.padding;
 
 % % --- Axes
 
-A = UI.Axes();
-W.insert(A, '3,1');
+% A = UI.Axes();
+% W.insert(A, '3,1');
 
 % % --- List widgets
 
-% X = UI.List();
-% for i = 1:10
-%   X.addElement(['Hello ' num2str(i)]);
-% end
-% W.insert(X, 'cA');
+X = UI.List();
+for i = 1:10
+  X.add_element(['Hello ' num2str(i)]);
+end
+W.insert(X, '1,1');
 
 % % --- Text
 
