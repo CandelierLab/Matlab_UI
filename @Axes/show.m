@@ -17,6 +17,9 @@ this.axes.XAxis.Color = this.window.theme.color.axis;
 this.axes.YAxis.Color = this.window.theme.color.axis;
 this.axes.ZAxis.Color = this.window.theme.color.axis;
 
+% Font
+this.axes.FontSize = UI.font_size();
+
 % Misc
 this.axes.Box = true;
 grid(this.axes, 'on');

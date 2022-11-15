@@ -7,7 +7,7 @@ W = UI.Window(3,2, fid=1);
 W.layout.col(2).width = 0.3;
 W.layout.cell(1,2).name = 'spare';
 
-L = UI.Layout(2, 1);
+L = UI.Layout(2,1);
 W.insert(L, '2,1');
 
 W.layout.padding = W.prop.padding;
@@ -15,8 +15,8 @@ W.layout.margin = W.prop.padding;
 
 % % --- Axes
 
-% A = UI.Axes();
-% W.insert(A, 'sC');
+A = UI.Axes();
+W.insert(A, '3,1');
 
 % % --- List widgets
 
@@ -77,7 +77,7 @@ W.layout.margin = W.prop.padding;
 
 W.show
 
-W.layout.show
+% W.layout.show
 
 % -------------
 

@@ -35,6 +35,8 @@ end
 
 % --- Name assignment ------------------------------------------------------
 
-for i = 1:numel(this.cell)
-  this.cell(i).name = names{i};
+for i = 1:this.Nr
+  for j = 1:this.Nc
+    this.cell(i,j).name = names{i,j};
+  end
 end

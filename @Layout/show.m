@@ -1,9 +1,16 @@
-function show(this, mode, root)
+function show(this, mode, root, arg)
 
 arguments
   this
   mode char = 'inner'     % 'inner', 'outer'
   root logical = true
+  arg.font_size double = []
+end
+
+% --- Display settings
+
+if isempty(arg.font_size)
+  arg.font_size = UI.font_size('large');
 end
 
 % --- Window title
@@ -33,6 +40,7 @@ for i = 1:numel(this.cell)
       this.cell(i).frame = annotation(this.window.figure, 'textbox', ...
         Position = this.cell(i).(mode), ...
         String = this.cell(i).name, ...
+        FontSize = arg.font_size, ...
         FitBoxToText = 'off', ...
         HorizontalAlignment = 'center', ...
         VerticalAlignment = 'middle', ...

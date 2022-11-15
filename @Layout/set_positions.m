@@ -102,7 +102,14 @@ for i = 1:this.Nr
     this.cell(i,j).outer = [x y W(j) H(i)];
     this.cell(i,j).inner = [x+ml y+md W(j)-ml-mr H(i)-md-mu];
 
+    % Set content position
+
+    if isprop(this.cell(i,j).content, 'position')
+      this.cell(i,j).content.position = this.cell(i,j).inner;
+    end
+
     % --- Update sublayouts
+    
     if isa(this.cell(i,j).content, class(this))
       this.cell(i,j).content.set_positions;
     end
