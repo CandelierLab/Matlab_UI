@@ -3,43 +3,53 @@ classdef Template < handle
 Template class
 %}
 
-    % === PROPERTIES =======================================================
+  % === EVENTS ===========================================================
 
-    properties
-      
-      % Layout
-      layout
+  events
+    shortcut
+  end
 
-      % Widgets
-      widget
 
-    end
+  % === PROPERTIES =======================================================
 
-    % === METHODS =========================================================
+  properties
+    
+    % Layout
+    layout
 
-    methods
+    % Widgets
+    widget
 
-        % --- Constructor -------------------------------------------------
-        function this = Template(Nr, Nc, arg)
+    % Shortcuts
+    shortlist
 
-          arguments
-            Nr double = 1
-            Nc double = 1
-            arg.name cell = {}
-          end
+  end
 
-          this.layout = UI.Layout(Nr, Nc, name=arg.name);
+  % === METHODS =========================================================
 
+  methods
+
+      % --- Constructor -------------------------------------------------
+      function this = Template(Nr, Nc, arg)
+
+        arguments
+          Nr double = 1
+          Nc double = 1
+          arg.name cell = {}
         end
 
-        % --- Setters ------------------------------------------------------
+        this.layout = UI.Layout(Nr, Nc, name=arg.name);
 
-        function set.layout(this, L)
-          this.layout = L;
-          if isa(this, 'UI.Window')
-            this.layout.window = this;
-          end
+      end
+
+      % --- Setters ------------------------------------------------------
+
+      function set.layout(this, L)
+        this.layout = L;
+        if isa(this, 'UI.Window')
+          this.layout.window = this;
         end
-    end
+      end
+  end
 
 end

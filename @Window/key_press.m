@@ -1,4 +1,4 @@
-function input = KeyPress(this, varargin)
+function input = key_press(this, varargin)
 
 K = varargin{2};
 

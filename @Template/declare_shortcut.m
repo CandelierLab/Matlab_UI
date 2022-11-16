@@ -1,4 +1,9 @@
 function declare_shortcut(this, tag, desc)
+% UI.Template.declare_shortcut
+% 
+% Declare a shortcut, for display in the help.
+%
+% NB: The code associated to each shortcut is defined in the 'shortcuts' method.
 
 arguments
   this

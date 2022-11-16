@@ -25,13 +25,23 @@ end
 
 if isa(obj, 'UI.Template')
 
-  % Insert layout
+  % --- Layout
+
   this.insert(obj.layout, name, rename=arg.rename);
 
-  % Insert widgets
+  % --- Widgets
+
   for i = 1:numel(obj.widget)
     this.insert(obj.widget(i).object, name + " > " + obj.widget(i).name);
   end
+
+  % --- Shortcuts
+
+  for i = 1:numel(obj.shortlist) 
+    this.declare_shortcut(obj.shortlist(i).tag, obj.shortlist(i).desc);
+  end
+
+  addlistener(this, 'shortcut', @obj.shortcuts);
 
   return
 
