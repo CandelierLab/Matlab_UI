@@ -30,8 +30,7 @@ if isa(obj, 'UI.Template')
 
   % Insert widgets
   for i = 1:numel(obj.widget)
-    % this.add_widget(obj.widget(i).object, name + " > " + obj.widget(i).name);
-    % this.insert(obj.widget(i).object, name + " > " + obj.widget(i).name);
+    this.insert(obj.widget(i).object, name + " > " + obj.widget(i).name);
   end
 
   return
@@ -40,15 +39,19 @@ end
 
 % === Widgets ==============================================================
 
-% --- Parenting
-
 this.add_widget(obj, name);
 
-if isprop(obj, 'window')
-  obj.window = this;
-elseif isprop(obj, 'Parent')
-  obj.Parent = this.figure;
+% --- Parenting
+
+if isa(this, 'UI.Window')
+  if isprop(obj, 'window')
+    obj.window = this;
+  elseif isprop(obj, 'Parent')
+    obj.Parent = this.figure;
+  end
 end
+
+% --- Layout padding
 
 if isa(obj, 'UI.Layout')
 

@@ -5,12 +5,13 @@ clc
 W = UI.Window(3,2, fid=1);
 
 W.layout.col(2).width = 0.3;
+W.layout.cell(2,1).name = 'Sub';
 W.layout.cell(1,2).name = 'spare';
 
-% T = UI.Template(2,1);
+T = UI.Template(2,2);
 
-L = UI.Layout(2,1);
-W.insert(L, '2,1');
+% L = UI.Layout(2,1);
+% W.insert(L, 'Sub');
 
 
 % % --- Axes
@@ -30,12 +31,13 @@ W.insert(X, '1,1');
 
 Z = UI.Text('Random text');
 % Z.vertical = true;
-W.insert(Z, '2,1 > 1,1');
+T.insert(Z, '1,1');
+% W.insert(Z, 'Sub > 1,1');
 
 % % --- Slider
 
-% S = UI.Slider();
-% T.insert(S, '2,1')
+S = UI.Slider();
+T.insert(S, '2,1')
 
 % % --- Log
 
@@ -75,7 +77,7 @@ W.insert(C, '2,2')
 
 % --- Display
 
-% W.insert(T, '2,1');
+W.insert(T, 'Sub');
 
 W.show
 
