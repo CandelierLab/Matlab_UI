@@ -14,7 +14,7 @@ T = UI.Template(2,2);
 % W.insert(L, 'Sub');
 
 
-% % --- Axes
+% --- Axes
 
 % A = UI.Axes();
 % W.insert(A, '3,1');
@@ -27,19 +27,19 @@ for i = 1:10
 end
 W.insert(X, '1,1');
 
-% % --- Text
+% --- Text
 
 Z = UI.Text('Random text');
 % Z.vertical = true;
 T.insert(Z, '1,1');
 % W.insert(Z, 'Sub > 1,1');
 
-% % --- Slider
+% --- Slider
 
 S = UI.Slider();
 T.insert(S, '2,1')
 
-% % --- Log
+% --- Log
 
 S = UI.Log();
 S.add('title', 'Log console');
@@ -62,7 +62,7 @@ S.add('Standard text final');
 
 W.insert(S, '3,1')
 
-% % --- Controls
+% --- Controls
 
 C = UI.Controls;
 C.colSize = [0.5 0.3];
