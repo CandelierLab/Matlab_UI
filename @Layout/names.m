@@ -14,7 +14,7 @@ if isempty(names)
   names = cell(this.Nr, this.Nc);
   for i = 1:this.Nr
     for j = 1:this.Nc
-      names{i,j} = arg.prefix + i + "," + j;
+      names{i,j} = i + "," + j;
     end
   end
 
@@ -37,6 +37,6 @@ end
 
 for i = 1:this.Nr
   for j = 1:this.Nc
-    this.cell(i,j).name = names{i,j};
+    this.cell(i,j).name = arg.prefix + names{i,j};
   end
 end
