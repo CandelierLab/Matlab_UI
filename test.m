@@ -4,6 +4,10 @@ clc
 
 W = UI.Window(3,2, fid=1);
 
+W.menu = UI.Menu('Test');
+
+W.menu.children
+
 W.layout.col(2).width = 0.6;
 W.layout.cell(2,1).name = 'Sub';
 W.layout.cell(1,2).name = 'spare';
@@ -86,6 +90,9 @@ W.insert(C, '2,2')
 W.show
 
 % W.layout.show
+
+% m = uimenu(W.figure,'Text','Test');
+% m.ForegroundColor = 'r';
 
 % -------------
 
