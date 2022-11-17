@@ -31,6 +31,9 @@ switch tag
     this.theme.color.figure.text = grey(0.65);
     this.theme.color.figure.layout = [1 0.75 0];
 
+    this.theme.color.menu.background = grey(0.1);
+    this.theme.color.menu.item = grey(0.9);
+
     this.theme.color.axis = grey(0.8);
 
     this.theme.color.edit.background = grey(0.2);

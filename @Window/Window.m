@@ -40,6 +40,9 @@ W.prop.padding = NaN;
     theme
     fontsize
 
+    % Menu bar
+    menu = struct('desc', {}, 'sub', {}, 'callback', {}, 'shortcut', {});
+
   end
 
   % === METHODS =========================================================
@@ -62,8 +65,9 @@ W.prop.padding = NaN;
 
       % Default figure properties
       this.prop.id = arg.fid; 
-      this.prop.title = 'UI Window';
       this.prop.fullscreen = false;
+      this.prop.title = 'UI Window';
+      this.prop.menu = false;
       this.prop.padding = arg.padding;
 
       % Layout padding
