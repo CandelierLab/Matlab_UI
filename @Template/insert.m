@@ -97,5 +97,5 @@ lay.cell(I).content = obj;
 
 % Rename sub-layout cells
 if isa(obj, 'UI.Layout') && arg.rename
-  obj.names({obj.cell.name}, prefix = lay.cell(I).name+" > ");
+  obj.names(reshape({obj.cell.name}, size(obj.cell)), prefix = lay.cell(I).name+" > ");
 end

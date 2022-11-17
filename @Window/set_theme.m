@@ -36,6 +36,7 @@ switch tag
     this.theme.color.edit.background = grey(0.2);
     this.theme.color.button.off = grey(0.2);
     this.theme.color.button.on = grey(0.3);
+    this.theme.color.select.background = grey(0.25);
 
     this.theme.color.element.background = grey(0.15);
     this.theme.color.element.selected = grey(0.3);

@@ -4,9 +4,9 @@ arguments
   this
   type char
   description char
-  arg.default double = 0    % For edit boxes
+  arg.value = NaN
   arg.string char = ''      % For buttons
-  arg.value logical = false % For buttons
+  arg.list cell = {}        % For select
   arg.units char = ''
   arg.callback = @(~,~) []
 end
@@ -20,13 +20,40 @@ this.Elm(k).type = type;
 this.Elm(k).description = description;
 this.Elm(k).units = arg.units;
 this.Elm(k).callback = arg.callback;
+
 switch type
+
   case 'edit'
-    this.Elm(k).default = arg.default;
-    this.Elm(k).value = arg.default;
+
+    if isnan(arg.value)
+      arg.value = 0;
+    end
+
+    this.Elm(k).value = arg.value;
+
   case 'button'
+
+    if isnan(arg.value)
+      arg.value = false;
+    end
+
     this.Elm(k).string = arg.string;
     this.Elm(k).value = arg.value;
+
+  case 'select'
+
+    if isempty(arg.list)
+      error('UI:Control:emptySelectList', 'Empty list for select element ''%s''.', description);
+    end
+
+    if isnan(arg.value)
+      arg.value = 1;
+    end
+
+    this.Elm(k).list = arg.list;
+    this.Elm(k).string = arg.list{arg.value};
+    this.Elm(k).value = arg.value;
+
 end
 
 if ~isempty(this.window)

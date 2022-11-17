@@ -21,6 +21,9 @@ for i = 1:numel(this.Elm)
 
   this.Elm(i).cell.bkg.Position = [wd (i-1)*h wc h];
   this.Elm(i).cell.control.Position = [wd+wc/2 (i-1/2)*h];
+  if isfield(this.Elm(i).cell, 'deco')
+    this.Elm(i).cell.deco.Position = [wd+wc-3/this.pos(3) (i-1/2)*h];
+  end
 
   % --- Units
 
