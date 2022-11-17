@@ -22,6 +22,8 @@ Component:Selectable list class
 
   properties
 
+    tag
+
     % Figure
     window
     position
@@ -57,7 +59,13 @@ Component:Selectable list class
   methods
 
       % --- Constructor -------------------------------------------------
-      function this = List()
+      function this = List(arg)
+
+        arguments
+          arg.tag char = ''
+        end
+
+        this.tag = arg.tag;
         
       end
 

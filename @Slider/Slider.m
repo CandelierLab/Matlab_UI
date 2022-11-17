@@ -19,6 +19,8 @@ Component:Slider class
 
   properties
 
+    tag
+
     % Figure
     window
     position
@@ -65,7 +67,13 @@ Component:Slider class
   methods
 
       % --- Constructor -------------------------------------------------
-      function this = Slider()
+      function this = Slider(arg)
+
+        arguments
+          arg.tag char = ''
+        end
+
+        this.tag = arg.tag;
         
       end
 

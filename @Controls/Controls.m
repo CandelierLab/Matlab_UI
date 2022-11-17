@@ -22,6 +22,8 @@ Events:
 
   properties
 
+    tag
+
     % Figure
     window
     position
@@ -59,8 +61,14 @@ Events:
   methods
 
       % --- Constructor -------------------------------------------------
-      function this = Log()
-        
+      function this = Controls(arg)
+
+        arguments
+          arg.tag char = ''
+        end
+
+        this.tag = arg.tag;
+
       end
 
       % --- Setters --------------------------------------------------------

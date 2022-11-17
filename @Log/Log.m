@@ -8,6 +8,8 @@ UI Log class
 
   properties
 
+    tag
+
     % Figure
     window
     position
@@ -37,7 +39,13 @@ UI Log class
   methods
 
       % --- Constructor -------------------------------------------------
-      function this = Log()
+      function this = Log(arg)
+
+        arguments
+          arg.tag char = ''
+        end
+
+        this.tag = arg.tag;
         
       end
 

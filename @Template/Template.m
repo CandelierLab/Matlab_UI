@@ -19,6 +19,7 @@ Template class
 
     % Widgets
     widget
+    get = struct()
 
     % Shortcuts
     shortlist

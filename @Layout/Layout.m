@@ -8,6 +8,8 @@ Layout class
 
     properties
 
+      tag
+
       % Parent window
       window
       position = [0 0 1 1];
@@ -47,8 +49,12 @@ Layout class
             Nr double = 1
             Nc double = 1
             arg.name cell = {}
+            arg.tag = '';
           end
 
+          % Set tag
+          this.tag = arg.tag;
+  
           % Number of rows, cols
           this.Nr = Nr;
           this.Nc = Nc;

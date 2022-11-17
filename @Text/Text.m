@@ -8,6 +8,8 @@ Component:Text
 
   properties
 
+    tag
+
     % Figure
     window
     position
@@ -28,9 +30,15 @@ Component:Text
   methods
 
       % --- Constructor -------------------------------------------------
-      function this = Text(text)
+      function this = Text(text, arg)
+
+        arguments
+          text char
+          arg.tag char = ''
+        end
 
         this.text = text;
+        this.tag = arg.tag;
         
       end
 
